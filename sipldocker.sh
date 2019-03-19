@@ -266,7 +266,9 @@ run_cli() {
         esac
     done
     shift $((OPTIND -1))
+
     userstring="${userstring// /-}"
+
     if [ "$#" -gt 0 ]; then
         command_to_run=( "$@" )
     fi

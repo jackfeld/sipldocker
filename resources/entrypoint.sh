@@ -1,10 +1,9 @@
 #!/bin/bash
 set -e
-set -x
 
 trap 'shutdown' TERM INT  ## This line makes shutting down the container faster
 
-if [ ! -z $USERSTRING ]; then
+if [ ! -z "$USERSTRING" ]; then
     IFS=':' read -ra USERSTRINGSPLIT <<< "$USERSTRING"
 
     new_username="${USERSTRINGSPLIT[0]}"

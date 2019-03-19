@@ -45,6 +45,12 @@ For a more detailed documentation then this readme see the docs folder.
 For setting these dependencies see the "*Installing dependencies*" section in documentation.
 
 ## Setup
+A part from the above dependencies, the only necessary tool for using the *mldock* CLI is the *mldock.sh* file.
+(The docker image itself is pulled from DockerHub on first usage). To download the file from github (along with
+the rest of the repository) use:
+``` bash
+git clone https://github.com/jackfeld/sipldocker.git {target_folder}
+```
 
 Then move into the repository's folder (the folder containing the *sipledocker.sh* file) and run the following command 
 to define the *sipledocker* command shortcut:
@@ -81,7 +87,11 @@ sipledocker run
 
 ---
 
-For example, to run a container using the folder *~/sipldocker_home* as a permanent home folder run:
+In most cases you would probably want to keep our home folder consistent between runs. This is done using the
+*-f {folder to use as home folder}* flag. If a non existing or empty folder is given, then it is initialized with
+some initial home folder content. 
+
+For example, to run a container using the folder *~/mldock_home* as a permanent home folder run:
 ```bash
 sipldocker run ~/sipldocker_home
 ```
