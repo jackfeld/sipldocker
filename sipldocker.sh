@@ -7,7 +7,7 @@ app_name=sipldocker
 
 repository="sipltechnion/"
 image_name="sipldocker"
-version_name="v0.3"
+version_name="v0.4"
 
 container_name="sipldocker"
 
@@ -378,7 +378,7 @@ check_docker_for_sudo() {
             exit
         fi
     else
-        docker_sudo_prefix="sudo "
+        docker_sudo_prefix=""
     fi
 }
 

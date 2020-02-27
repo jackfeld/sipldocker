@@ -1,4 +1,4 @@
-FROM nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04
+FROM nvidia/cuda:10.0-cudnn7-devel-ubuntu18.04
 # FROM nvidia/cuda:9.2-cudnn7-devel-ubuntu18.04
 
 ## Install basic packages and useful utilities
@@ -19,9 +19,9 @@ RUN apt-get update -y && \
         cmake \
         sudo \
         openssh-server \
-        python3 \
-        python3-dev \
+        python3.7 \
         python3-pip \
+        python3.7-dev \
         python \
         python-dev \
         python-pip \
@@ -71,6 +71,7 @@ RUN apt-get update -y && \
         graphviz \
         && \
     apt-get install -y neovim && \
+    python3.7 -m pip install pip && \
     pip install pynvim==0.3.2 && \
     apt-get clean
 
@@ -221,7 +222,7 @@ RUN groupadd -g $DOCKUSER_GID dockuser && \
     useradd --system --create-home --home /home/dockuser --shell /bin/bash -G sudo -g dockuser -u $DOCKUSER_UID dockuser && \
     mkdir /tmp/runtime-dockuser && \
     chown dockuser:dockuser /tmp/runtime-dockuser && \
-    echo "dockuser ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers.d/dockuser
+    echo "ALL ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers.d/dockuser
 
 ENV LANG en_US.UTF-8  
 ENV LANGUAGE en_US:en  
