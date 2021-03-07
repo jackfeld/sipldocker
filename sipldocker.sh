@@ -7,7 +7,7 @@ app_name=sipldocker
 
 repository="sipltechnion/"
 image_name="sipldocker"
-version_name="v0.4"
+version_name="v0.5"
 
 container_name="sipldocker"
 
