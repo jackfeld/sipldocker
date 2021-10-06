@@ -3,12 +3,12 @@
 A fully featured computer vision / machine learning development environment inside a Docker image.
 
 The image contains:
-- The basic Ubnutu development packages: build-essentianl, cmake, etc.
+- The basic Ubnutu development packages: build-essential, cmake, etc.
 - Common management tools: git, curl, rsync, etc.
 - Terminal based develop tools: vim, tmux, zsh, tig, etc.
 - GUI based IDE / editors: PyCharm: and VSCode.
 - Basic scientific Python packages: NumPy, SciPy, Pandas, etc.
-- Python plotting packages: Matplotlib, Plotly, Seaboarn, etc.
+- Python plotting packages: Matplotlib, Plotly, Seaborn, etc.
 - Computer vision and machine learning packages: OpenCV, SciKit-Image, SciKit-learn, etc.
 - Deep learning frameworks: Tensorflow (CPU support only for now) and Torch (+ TorchVision)
 - Jupyter notebook and JupyterLab
@@ -35,7 +35,7 @@ The following features are enabled by default (and can be disabled using the app
 http://wiki.ros.org/docker/Tutorials/GUI). To disable the X-server mapping and avoid this security issue 
 using the -x flag when running commands.
 
-For a more detailed documentation then this readme see the docs folder.
+For more detailed documentation, see the docs folder.
 
 ## Dependencies
 - [Docker](https://www.docker.com/)
@@ -52,37 +52,37 @@ the rest of the repository) use:
 git clone https://github.com/jackfeld/sipldocker.git {target_folder}
 ```
 
-Then move into the repository's folder (the folder containing the *sipledocker.sh* file) and run the following command 
-to define the *sipledocker* command shortcut:
+Then move into the repository's folder (the folder containing the *sipldocker.sh* file) and run the following command 
+to define the *sipldocker* command shortcut:
 ```bash
-./sipledocker.sh setup
+./sipldocker.sh setup
 ```
 You will be ask to enter your user password.
-(This command simply create a link to the *sipledocker.sh* file at */usr/bin/sipledocker*).
+(This command simply create a link to the *sipldocker.sh* file at */usr/bin/sipldocker*).
 
-Note: you can also copy the file to the */usr/bin* folder (instead of creating a link) using the *-c* flag: *./sipledocker.sh setup -c*.
+Note: you can also copy the file to the */usr/bin* folder (instead of creating a link) using the *-c* flag: *./sipldocker.sh setup -c*.
 
 ## Usage
-From the output of *sipledocker -h*:
+From the output of *sipldocker -h*:
 ```
-A CLI tool for working with the sipledocker docker
+A CLI tool for working with the sipldocker docker
 
-usage: sipledocker  <command> [<options>]
-   or: sipledocker -h         to print this help message.
+usage: sipldocker  <command> [<options>]
+   or: sipldocker -h         to print this help message.
 
 Commands
-    create_link             Create a link to the sipledocker.sh script in the /usr/bin folder (requiers sudo).
+    create_link             Create a link to the sipldocker.sh script in the /usr/bin folder (requiers sudo).
     build                   Build the image.
     run                     Run a command inside a new container.
     exec                    Execute a command inside an existing container.
     stop                    Stop a running container.
-Use sipledocker <command> -h for specific help on each command.
+Use sipldocker <command> -h for specific help on each command.
 ```
 
 ## Examples
 To simply start a disposable container running a simple bash shell, run:
 ```bash
-sipledocker run
+sipldocker run
 ```
 
 ---
